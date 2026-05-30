@@ -1,11 +1,13 @@
 using SBSender.Components;
+using SBSender.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
+// Register QueueService  ->memail service so transient is used.
+builder.Services.AddTransient<IQueueService, QueueService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
