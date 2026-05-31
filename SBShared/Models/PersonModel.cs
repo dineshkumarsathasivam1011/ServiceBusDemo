@@ -11,7 +11,7 @@ namespace SBShared.Models
     {
 
         [Required]
-        public string? Firstname;
+        public string? FirstName;
         [Required]
         public string? LastName;
     }
